@@ -1,0 +1,84 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="ns.HTML5Module.controller.View1" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page1" title="{i18n>title}">
+
+                
+								<OverflowToolbar>
+									<content>
+										<ToolbarSpacer/>
+										<SearchField
+											id="searchField"
+											width="20%"
+											placeholder="{i18n>searchFieldPlaceholder}"
+											search="onSearch"/>
+										<Button
+											id="sortUsersButton"
+											press="onSort"
+											tooltip="{i18n>sortButtonText}"
+											icon="sap-icon://sort"/>
+									</content>
+								</OverflowToolbar>
+							
+                 
+                 <IconTabBar id="idIconTabBarNoIcons"
+		            expanded="{device>/isNoPhone}"
+		            class="sapUiResponsiveContentPadding">
+                        <items>
+                            <IconTabFilter text="Table View" key="tableKey">
+                                <Table id="ProductTable" items="{path: 'dataModel>/products'}">
+                                <columns>
+                                <Column>
+                                <Text text="MainCategory" />
+                                </Column>
+                                <Column>
+                                <Text text="Name" />
+                                </Column>
+                                <Column>
+                                <Text text="Price" />
+                                </Column>
+                                </columns>
+                                <items>
+                                <ColumnListItem type="Navigation" press="onPress1">
+                                <cells>
+                                <Text text="{dataModel>MainCategory}" />
+                                </cells>
+                                <cells>
+                                <Text text="{dataModel>Name}"/> 
+                                </cells>
+                                 <cells>
+                                <Text text="{dataModel>Price} {dataModel>CurrencyCode}"/>
+                                </cells>
+                                </ColumnListItem>
+                                </items>
+                                </Table>
+                            </IconTabFilter>
+                            <IconTabFilter text="List View" key="listKey">
+                               <List id="listViewId" 
+                                    width="100%"
+                                    items="{dataModel>/products}"
+                                    headerText="Products">
+                                    <ObjectListItem
+                                    title="{dataModel>Name}"
+                                    type="Active"
+                                    press="onPress1"
+                                    number="{
+                                    parts:[{path:'dataModel>Price'},{path:'dataModel>CurrencyCode'}],
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions: {showMeasure: false}
+                                    }"
+                                    numberUnit="{dataModel>CurrencyCode}">
+                                    <ObjectAttribute text="{dataModel>Weight} {dataModel>WeightUnit}" />
+                                    <ObjectAttribute text="{dataModel>DimensionWidth} x {dataModel>DimensionDepth} x {dataModel>DimensionHeight} {dataModel>Unit}" />
+                                    </ObjectListItem>
+                                    </List>
+                            </IconTabFilter>
+                        </items>
+            	</IconTabBar>
+				
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

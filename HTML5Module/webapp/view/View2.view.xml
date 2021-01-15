@@ -1,0 +1,89 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m"  xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="ns.HTML5Module.controller.View2" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page2" title="{i18n>detailedView}" showNavButton="true" navButtonPress="onNavBack">
+					<content>
+                    
+                        <VBox class="sapUiSmallMargin">
+		                    <f:Form id="FormDisplay354" editable="false">
+			                <f:title>
+				            <core:Title text="{/Name}" />
+                            </f:title>
+                            <f:layout>
+                                    <f:ResponsiveGridLayout
+                                        labelSpanXL="3"
+                                        labelSpanL="3"
+                                        labelSpanM="3"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="4"
+                                        emptySpanL="4"
+                                        emptySpanM="4"
+                                        emptySpanS="0"
+                                        columnsXL="1"
+                                        columnsL="1"
+                                        columnsM="1"
+                                        singleContainerFullSize="false" />
+                                </f:layout>
+                                <f:formContainers>
+                                    <f:FormContainer>
+                                        <f:formElements>
+                                            <f:FormElement label="ProductId">
+                                                <f:fields>
+                                                    <Text text="{/ProductId}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="Category">
+                                                <f:fields>
+                                                    <Text text="{/Category}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="MainCategory">
+                                                <f:fields>
+                                                    <Text text="{/MainCategory}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="SupplierName">
+                                                <f:fields>
+                                                    <Text text="{/SupplierName}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="Weight">
+                                                <f:fields>
+                                                    <Text text="{/Weight} {/WeightUnit}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="ShortDescription">
+                                                <f:fields>
+                                                    <Text text="{/ShortDescription}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="Status">
+                                                <f:fields>
+                                                    <Text text="{/Status}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="Price">
+                                                <f:fields>
+                                                    <Text text="{/Price} {/CurrencyCode}" />
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement label="Dimensions">
+                                                <f:fields>
+                                                    <Text text="{/DimensionWidth}{/Unit} * {/DimensionDepth}{/Unit} * {/DimensionHeight}{/Unit}" />
+                                                </f:fields>
+                                            </f:FormElement>                                            
+                                        </f:formElements>
+                                    </f:FormContainer>
+                                </f:formContainers>
+                            </f:Form>
+                        </VBox>
+                                            
+
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
