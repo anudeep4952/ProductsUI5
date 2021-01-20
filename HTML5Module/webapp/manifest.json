@@ -87,9 +87,15 @@
 				"controlId": "app",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteView1",
+			"routes": [
+            {
+                "name": "LoginRoute",
 				"pattern": "",
+				"target": ["TargetLogin"]
+            },
+            {
+				"name": "RouteView1",
+				"pattern": "home/{username}",
 				"target": ["TargetView1"]
             },
             {
@@ -98,6 +104,12 @@
 				"target": ["TargetView2"]
             }],
 			"targets": {
+            "TargetLogin":{
+                    "viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "View3"
+            },
 				"TargetView1": {
 					"viewType": "XML",
 					"transition": "slide",

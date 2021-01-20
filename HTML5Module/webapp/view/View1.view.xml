@@ -5,7 +5,7 @@
 				<Page id="page1" title="{i18n>title}">
 
                 
-								<OverflowToolbar>
+					          <OverflowToolbar>
 									<content>
 										<ToolbarSpacer/>
 										<SearchField
@@ -18,13 +18,19 @@
 											press="onSort"
 											tooltip="{i18n>sortButtonText}"
 											icon="sap-icon://sort"/>
+                                        <Button
+											id="logoutButton"
+											press="logout"
+											tooltip="Log me out"
+											text="Logout"/>    
 									</content>
 								</OverflowToolbar>
-							
+										
                  
                  <IconTabBar id="idIconTabBarNoIcons"
 		            expanded="{device>/isNoPhone}"
 		            class="sapUiResponsiveContentPadding">
+                    
                         <items>
                             <IconTabFilter text="Table View" key="tableKey">
                                 <Table id="ProductTable" items="{path: 'dataModel>/products'}">
@@ -75,6 +81,7 @@
                                     </List>
                             </IconTabFilter>
                         </items>
+                        
             	</IconTabBar>
 				
 				</Page>
